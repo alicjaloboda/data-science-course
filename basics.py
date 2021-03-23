@@ -1,13 +1,13 @@
 #python --version
-
+'''
 print('You\'re \nwelcome')
 
-statement = '''
+statement = 
 This
 Is
 Very
 Important
-'''
+
 print(statement)
 
 first_name = 'Ala'
@@ -69,7 +69,7 @@ else:
 print(message)
 
 #pętle
-'''number_list = [1, 2, 3, 4, 5]
+number_list = [1, 2, 3, 4, 5]
 for x in number_list:
     print(x)
 for x in range(3,6):
@@ -79,9 +79,9 @@ sum_of_loop = 0
 for x in range(3,6):
     sum_of_loop += x
     print(sum_of_loop)
-    '''
+    
 co_workers = ['Ala','Marek','Łukasz']
-'''for x in co_workers:
+for x in co_workers:
     if x == 'Ala':
         print('Hello Ala')
     elif x == 'Marek':
@@ -91,12 +91,12 @@ co_workers = ['Ala','Marek','Łukasz']
 
 for x in co_workers:
     print(f'Hello {x}!')
-'''
+
 for x in co_workers:
     if x == 'Marek':
         print('hello Marek')
         break
-'''Pętle WHILE:
+Pętle WHILE:
 
 while x < 10:
     x += 1
@@ -109,8 +109,7 @@ while x < 10:
     x += 1
 else:
     print('x jest równe lub większe niż 10')
-'''
-'''
+
 tablica = [1,2,3,4,5,6,7,8]
 
 for x in tablica:
@@ -134,7 +133,7 @@ for number in range(1,50):
         print('Buzz')
     else:
         print(number)
-'''
+
 #Functions
 
 print('Hello from outside the function')
@@ -149,3 +148,83 @@ def print_name(first_name, last_name):
 
 print_name('Ala', 'Lala')
 
+def remove_elements(lista):
+    lista.pop(0)
+    lista.pop(-1)
+    return lista
+
+moja_lista = [0,1,2,3,4,5,6]
+nowa_lista = remove_elements(moja_lista)
+print(nowa_lista)
+
+# Funkcje rekursywne
+# 5*4*3*2*1
+
+def factorial(x):
+    if x == 1:
+        return 1
+    else:
+        return x * factorial(x-1)
+
+factorial_number = factorial(5)
+print(factorial_number)
+
+#Fibonacci - funkcja rekursywna
+
+def fib_seq(amount):
+    if amount == 0:
+        return 0
+    elif amount == 1:
+        return 1
+    else:
+        return fib_seq(amount-2) + fib_seq(amount - 1)
+
+print(fib_seq(13))
+
+for x in range(13):
+    print(fib_seq(x))
+'''
+
+pozdrowienia = 'Witaj, w świecie Pythona!'
+#Indexing
+#print(pozdrowienia[0])
+
+#Slicing
+#print(pozdrowienia[0:7])
+#print(pozdrowienia[0:10:2])
+
+#length
+#print(len(pozdrowienia))
+
+#zwraca listę oddzieloną znakiem podanym w nawiasie
+#print(pozdrowienia.split(','))
+
+#znajduje i zwraca index
+#print(pozdrowienia.find('Python'))
+
+#Joins
+#print(pozdrowienia, ':'.join('abcdefg'))
+#print(pozdrowienia, ':'.join(('10','23','15','10000000023')))
+'''
+haslo = ' abc123      !
+
+if haslo.strip() == 'abc123!':
+    print('Hasło poprawne')
+else:
+    print('Hasło niepoprawne!')
+'''
+
+#nowe_pozdrowienia = pozdrowienia.replace('Witaj','Cześć')
+#print(nowe_pozdrowienia)
+
+success = 'Do or do not there is no try'
+print(success[0:12])
+
+success_quote = 'you win some and you lose some'
+new_success_quote = success_quote.replace('lose','learn')
+print(new_success_quote)
+
+string_list = 'lets make this a list'
+list_variable = string_list.split()
+print(list_variable)
+print(string_list[2])
