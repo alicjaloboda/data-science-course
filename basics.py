@@ -212,7 +212,7 @@ if haslo.strip() == 'abc123!':
     print('Hasło poprawne')
 else:
     print('Hasło niepoprawne!')
-'''
+
 
 #nowe_pozdrowienia = pozdrowienia.replace('Witaj','Cześć')
 #print(nowe_pozdrowienia)
@@ -228,3 +228,146 @@ string_list = 'lets make this a list'
 list_variable = string_list.split()
 print(list_variable)
 print(string_list[2])
+
+# Dictionaries
+
+user_dict = {
+    'first_name': 'John',
+    'last_name': 'Doe',
+    'birth_year': 1998
+}
+
+print(user_dict['birth_year'])
+print(user_dict.get('last_name'))
+user_dict['major'] = 'Math'
+print(user_dict)
+
+#Lenth
+print(len(user_dict))
+#remove
+user_dict.pop('major')
+print(user_dict)
+del user_dict['birth_year']
+user_dict.clear() #clear the dictionary
+print(user_dict)
+
+vehicle = {
+    'model': 'Opel',
+    'make': 'Volkswagen',
+    'year': 2013,
+    'mileage': 100000
+}
+print(vehicle['year'])
+vehicle['year'] = 2008
+vehicle['type'] = 'car'
+vehicle.pop('make')
+print(vehicle)
+
+user_dict = {
+    'first_name': 'John',
+    'last_name': 'Doe',
+    'birth_year': 1990
+}
+
+#Loops
+for x,y in user_dict.items():
+    print(x,y)
+
+if 'birth_year' in user_dict:
+    print('yes birth_year exists')
+
+dict2 = user_dict
+dict2.popitem() # usuwa zmienną również w user_dict
+print(f'user dict {user_dict}')
+print(f'dict2 {dict2}')
+
+#Copy
+dict3 = user_dict.copy()
+dict3.popitem()
+print(f'user_dict {user_dict}')
+print(f'dict3 {dict3}')
+
+#Nested dictionary
+family = {
+    'child1': {
+        'first_name': 'John',
+        'last_name': 'Doe',
+        'birth_year': 1998
+    },
+    'child2': {
+        'first_name': 'Mary',
+        'last_name': 'Doe',
+        'birth_year': 1993
+    },
+        'first_name': 'Peter',
+        'last_name': 'Doe',
+        'birth_year': 1995
+}
+print(family)
+
+vehicle = {
+    'model': 'Opel',
+    'make': 'Volkswagen',
+    'year': 2013,
+    'mileage': 100000
+}
+for x,y in vehicle.items():
+    print(x,y)
+
+vehicle2 = vehicle.copy()
+vehicle2['number of tires'] = 4
+
+print(f'vehicle {vehicle}')
+print(f'vehicle2 {vehicle2}')
+
+#Key = word,Value = number of times the word appears
+sentence = 'I am so happy to learn Python which makes my wife happy and interested in Python Python Python Python'
+
+sentence_dict = {}
+for each_word in sentence.split(' '):
+    sentence_dict[each_word] = sentence_dict.get(each_word, 0) + 1
+print(sentence_dict)
+'''
+'''
+# tuples - krotki - wartości nie mogą być zmieniane
+my_tuple = (1,2,3,4,5)
+print(my_tuple[1:4])
+
+for x in my_tuple:
+    print(x)
+print(len(my_tuple))
+
+'''
+'''
+# Sets - typ struktury danych, podobnie jak listy. 
+# Listy są odrobinę szybsze, gdy chcesz przechodzić przez kolejne elementy
+# Sets są o wiele szybsze, gdy chcesz sprawdzić, czy dany element znajduje się w nim
+# Najczęściej używane do usuwania duplikatów - mogą zawierać jedynie unikalne wartości
+
+my_set = {'jabłka', 'banany', 'melony','ananasy','itd...'}
+print(my_set) #za każdym razem set wyświetla się w innej kolejności, ponieważ jest to zbiór nieuporządkowany
+print('jabłka' in my_set) #sprawdza, czy dany element znajduje się w secie
+
+for x in my_set:
+    print(x)
+
+# nie można indeksować set - na przykład print(my_set[3])
+
+my_set.remove('ananasy')
+print(my_set)
+# my_set.remove('pomarańcze') - będzie błąd
+my_set.discard('pomarańcze') # nie będzie błędu! remove jest bezpieczniejszą opcją
+#my_set.clear() - możemy wyczyścić set
+
+set_one = {1,2,3,4,5}
+set_two = {6,7,8,9,10}
+
+set_three = set_one.union(set_two) #union łączy zbiory
+
+my_set.add('pomarańcze')
+my_set.update(['śliwki', 'wiśnie'])
+print(my_set)
+print(len(my_set))
+'''
+# IMPORTOWANIE MODUŁÓW I BIBLIOTEK - pliki homework.py + grade_average_service.py
+
