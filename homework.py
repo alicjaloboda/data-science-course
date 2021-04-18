@@ -1,4 +1,5 @@
-import Imports.grade_average_service
+#export PYTHONPATH="${PYTHONPATH}:C:/data-science-course/data-science-course/homework.py/"
+import grade_average_service 
 
 homework_assignment_grades = {
     'homework_1': 85,
@@ -6,4 +7,4 @@ homework_assignment_grades = {
     'homework_3':81
 }
 
-Imports.grade_average_service(homework_calculate(homework_assignment_grades))
+grade_average_service.homework_calculate(homework_assignment_grades)
