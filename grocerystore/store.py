@@ -1,3 +1,5 @@
+import grocerystore.store_service as store_service
+
 items_to_purchase = {
     'candy': 7,
     'notebook': 15,
@@ -28,5 +30,5 @@ while not user_shopping:
     if keep_shopping.lower().strip() == 'n':
         user_shopping = True
 
-
+store_service.purchase_items(user_money_arg=user_money, items=items_price_added_to_card)
 
