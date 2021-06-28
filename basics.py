@@ -371,3 +371,67 @@ print(len(my_set))
 '''
 # IMPORTOWANIE MODUŁÓW I BIBLIOTEK - pliki homework.py + grade_average_service.py
 
+# Odczytywanie i zapis do pliku tekstowego
+'''
+f = open('text.txt', 'r')
+print(f.read()) #odczyt całego pliku
+#musi się zakończyć funkcją CLOSE, bo inaczej może dojść do memory leak 
+f.close()
+'''
+#Context Manger automatycznie otworzy i zamknie odczytywany plik
+'''
+with open('text.txt', 'r') as f:
+    #print(f.readline()) #zczytuje pierwszą linię, READLINES() zczytuje wszystkie linie jako listę
+    #for line in f:
+        #print(line, end='')
+    print(f.read(10))
+    print(f.read(20))
+    print(f.read(10))
+    print(f.tell) #podaje, na którym znaku się zatrzymaliśmy czytając plik (czyli tu będzie 30)
+
+with open('text2.txt', 'w') as f:
+    f.write('this is a new file and some text')
+#jeżeli plik już istniał, to go nadpisze nowym tekstem
+
+#Data i Czas
+import datetime
+
+today = datetime.date.today()
+print(today)
+print(today.weekday())
+# weekday = Poniedziałek = 0, Niedziela = 6
+# isoweekday = Poniedziałek = 1, Niedziela = 7
+print(today.isoweekday())
+create_day = datetime.date(2020,6,9)
+print(create_day)
+date_string = '2020-06-19'
+date_object = datetime.date.fromisoformat(date_string)
+time_delta = datetime.timedelta(days=5)
+print(date_object + time_delta)
+
+# Try & Catch 
+try:
+    # x = 10 * (1/0)
+    x = '2' + 2
+    print(x)
+
+except ZeroDivisionError as e:
+    print(f'{e} : Nie można dzielić przez zero!')
+except TypeError as e:
+    print(f'{e} : Błędny typ danych')
+except Exception as e:
+    print(f'ERROR! : {e}' )
+finally:
+    print('Pokaż to, nieważne co było wcześniej')
+
+try:
+    x = None
+    if x is None:
+        raise Exception
+
+except ZeroDivisionError as e:
+    print(e)
+except Exception as e:
+    print(f'x to nic, nie można znaleźć odpowiedzi')
+
+'''
